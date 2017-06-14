@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FriendFinder - Survey</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>FriendFinder - Survey</h1>
+            <h3>Take our survey to get matched up!</h3>
+            <hr>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Survey</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" role="form">
+
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="photo">Your Photo URL</label>
+                                <input type="text" class="form-control" id="photo">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="survey1">Question 1</label>
+                                <select class="form-control" id="survey1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                        </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="survey2">Question 2</label>
+                                <select class="form-control" id="survey2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="survey3">Question 3</label>
+                                <select class="form-control" id="survey3">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="survey4">Question 4</label>
+                                <select class="form-control" id="survey4">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="survey5">Question 5</label>
+                                <select class="form-control" id="survey5">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="survey6">Question 6</label>
+                                <select class="form-control" id="survey6">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="survey7">Question 7</label>
+                                <select class="form-control" id="survey7">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="survey8">Question 8</label>
+                                <select class="form-control" id="survey8">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="survey9">Question 9</label>
+                                <select class="form-control" id="survey9">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="survey10">Question 10</label>
+                                <select class="form-control" id="survey10">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                            </div>
+
+                        </form>
+                        <br>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-primary btn-md" id="find-btn"><span class="glyphicon glyphicon-user"></span> Find friends!</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Results Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Your Match!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h3 id="matchName" align="center">Some text in the modal.</h3>
+                        <img id="matchPhoto" src="" class="img center-block" width="300px">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        #matchName, #matchPhoto {
+            align: center
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        // Store form values into new profile object
+        $("#find-btn").on("click", function () {
+            // event.preventDefault();
+            var newProfile = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [
+                    $("#survey1").val().trim(),
+                    $("#survey2").val().trim(),
+                    $("#survey3").val().trim(),
+                    $("#survey4").val().trim(),
+                    $("#survey5").val().trim(),
+                    $("#survey6").val().trim(),
+                    $("#survey7").val().trim(),
+                    $("#survey8").val().trim(),
+                    $("#survey9").val().trim(),
+                    $("#survey10").val().trim()
+                ]
+            };
+
+            // Get all the current profiles
+            $.get("/api", function (data) {
+
+                if (data) {
+
+                    var matchScore = 99;
+                    var matchIndex = 0;
+
+                    // Compare user with other profiles in friends array
+                    for (var i = 0; i < data.length; i++) {
+
+                        var matchScoreTemp = 0;
+
+                        for (var j = 0; j < newProfile.scores.length; j++) {
+                            matchScoreTemp += Math.abs(newProfile.scores[j] - data[i].scores[j]);  
+                        }
+
+                        console.log(data[i].name, matchScoreTemp);
+
+                        if (matchScoreTemp < matchScore) {
+                            matchIndex = i;
+                            matchScore = matchScoreTemp;
+                        }
+
+                    }
+
+                    $("#matchName").text(data[matchIndex].name);
+                    $("#matchPhoto").attr("src", data[matchIndex].photo);
+
+                    $("#myModal").modal("toggle");
+
+                } else {
+                    return null
+                }
+            });
+
+            // Adds profile to friends array
+            $.post("/api/new", newProfile)
+                .done(function (data) {
+                    console.log("Added profile: " + JSON.stringify(data));
+                });
+
+        }); // closes find-btn function
+    </script>
+
+</body>
+
+</html>
