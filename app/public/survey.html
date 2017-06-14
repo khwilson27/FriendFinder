@@ -25,23 +25,23 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><strong>Survey</strong></h3>
+                        <h3 class="panel-title"><strong>Survey (1=DISAGREE and 5=AGREE)</strong></h3>
                     </div>
                     <div class="panel-body">
                         <form method="POST" role="form">
 
                             <div class="form-group">
                                 <label for="name">Your Name</label>
-                                <input type="text" class="form-control" id="name">
+                                <input type="text" class="form-control" id="name" placeholder="ex. John">
                             </div>
 
                             <div class="form-group">
                                 <label for="photo">Your Photo URL</label>
-                                <input type="text" class="form-control" id="photo">
+                                <input type="text" class="form-control" id="photo" placeholder="ex. myLinkedInPhoto.com/image.jpg">
                             </div>
 
                             <div class="form-group">
-                                <label for="survey1">Question 1</label>
+                                <label for="survey1">You find it difficult to introduce yourself to other people.</label>
                                 <select class="form-control" id="survey1">
                                     <option>1</option>
                                     <option>2</option>
@@ -52,7 +52,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="survey2">Question 2</label>
+                                <label for="survey2">You often get so lost in thoughts that you ignore or forget your surroundings.</label>
                                 <select class="form-control" id="survey2">
                             <option>1</option>
                             <option>2</option>
@@ -63,7 +63,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="survey3">Question 3</label>
+                                <label for="survey3">You try to respond to your e-mails as soon as possible and cannot stand a messy </label>
                                 <select class="form-control" id="survey3">
                             <option>1</option>
                             <option>2</option>
@@ -74,7 +74,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="survey4">Question 4</label>
+                                <label for="survey4">You find it easy to stay relaxed and focused even when there is some pressure.</label>
                                 <select class="form-control" id="survey4">
                             <option>1</option>
                             <option>2</option>
@@ -85,7 +85,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="survey5">Question 5</label>
+                                <label for="survey5">You do not usually initiate conversations.</label>
                                 <select class="form-control" id="survey5">
                             <option>1</option>
                             <option>2</option>
@@ -96,7 +96,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="survey6">Question 6</label>
+                                <label for="survey6">You rarely do something just out of sheer curiosity.</label>
                                 <select class="form-control" id="survey6">
                             <option>1</option>
                             <option>2</option>
@@ -107,7 +107,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="survey7">Question 7</label>
+                                <label for="survey7">You feel superior to other people.</label>
                                 <select class="form-control" id="survey7">
                             <option>1</option>
                             <option>2</option>
@@ -118,7 +118,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="survey8">Question 8</label>
+                                <label for="survey8">Being organized is more important to you than being adaptable.</label>
                                 <select class="form-control" id="survey8">
                             <option>1</option>
                             <option>2</option>
@@ -129,7 +129,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="survey9">Question 9</label>
+                                <label for="survey9">You are usually highly motivated and energetic.</label>
                                 <select class="form-control" id="survey9">
                             <option>1</option>
                             <option>2</option>
@@ -140,7 +140,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="survey10">Question 10</label>
+                                <label for="survey10">Winning a debate matters less to you than making sure no one gets upset.</label>
                                 <select class="form-control" id="survey10">
                             <option>1</option>
                             <option>2</option>
@@ -183,14 +183,6 @@
             </div>
         </div>
     </div>
-
-
-    <style>
-        #matchName, #matchPhoto {
-            align: center
-        }
-    </style>
-
 
     <script type="text/javascript">
         // Store form values into new profile object
@@ -239,13 +231,14 @@
 
                     }
 
+                    // Populate modal with appropriate data and toggle modal
                     $("#matchName").text(data[matchIndex].name);
                     $("#matchPhoto").attr("src", data[matchIndex].photo);
 
                     $("#myModal").modal("toggle");
 
                 } else {
-                    return null
+                    console.error("Something went wrong...");
                 }
             });
 

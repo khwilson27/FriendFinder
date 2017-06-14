@@ -6,7 +6,7 @@ var apiRoutes = function (app, friends) {
     return res.json(friends);
   });
 
-  // Create New Person - takes in JSON input
+  // Create New Profile - takes in JSON input
   app.post("/api/new", function (req, res) {
     var newProfile = req.body;
 
